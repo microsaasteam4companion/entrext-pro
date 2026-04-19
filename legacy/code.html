@@ -1,0 +1,808 @@
+<html class="dark" lang="en"><head></head><body class="bg-surface-container-lowest text-on-surface selection:bg-tertiary selection:text-on-tertiary">```html
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Entrext Pro | The Human Algorithm</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Manrope:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#484848",
+                    "error-dim": "#d73357",
+                    "primary-fixed-dim": "#dddddd",
+                    "error-container": "#a70138",
+                    "surface-container-high": "#1f1f1f",
+                    "on-surface-variant": "#ababab",
+                    "on-primary-fixed-variant": "#616161",
+                    "tertiary": "#befc00",
+                    "on-secondary": "#455367",
+                    "on-secondary-fixed": "#324053",
+                    "tertiary-fixed-dim": "#b2ed00",
+                    "on-tertiary": "#4b6600",
+                    "primary-dim": "#ebebeb",
+                    "on-secondary-fixed-variant": "#4e5c71",
+                    "on-secondary-container": "#c3d1e9",
+                    "secondary": "#d5e3fc",
+                    "tertiary-dim": "#b2ed00",
+                    "inverse-primary": "#5f5f5f",
+                    "on-tertiary-container": "#445d00",
+                    "on-surface": "#ffffff",
+                    "surface-dim": "#0e0e0e",
+                    "on-tertiary-fixed": "#354900",
+                    "surface-bright": "#2c2c2c",
+                    "primary": "#f9f9f9",
+                    "tertiary-container": "#befc00",
+                    "on-error": "#490013",
+                    "secondary-container": "#3a485b",
+                    "surface": "#0e0e0e",
+                    "surface-container-highest": "#262626",
+                    "secondary-fixed-dim": "#c7d5ed",
+                    "background": "#0e0e0e",
+                    "surface-container-low": "#131313",
+                    "surface-tint": "#f9f9f9",
+                    "on-primary-fixed": "#444444",
+                    "secondary-fixed": "#d5e3fc",
+                    "tertiary-fixed": "#befc00",
+                    "primary-container": "#a0a0a0",
+                    "surface-container": "#191919",
+                    "outline": "#757575",
+                    "primary-fixed": "#ebebeb",
+                    "secondary-dim": "#c7d5ed",
+                    "on-tertiary-fixed-variant": "#4c6800",
+                    "on-primary": "#5f5f5f",
+                    "surface-variant": "#262626",
+                    "error": "#ff6e84",
+                    "on-background": "#ffffff",
+                    "inverse-surface": "#f9f9f9",
+                    "inverse-on-surface": "#555555",
+                    "on-primary-container": "#232323",
+                    "on-error-container": "#ffb2b9",
+                    "surface-container-lowest": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #000000; color: #ffffff; font-family: 'Manrope', sans-serif; scroll-behavior: smooth; }
+        .font-headline { font-family: 'Epilogue', sans-serif; }
+        .font-label { font-family: 'Inter', sans-serif; }
+        .doodle-underline { position: relative; }
+        .doodle-underline::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6.5C15 2 35 1 50 3C65 5 85 7 99 2' stroke='%23befc00' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .doodle-arrow {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 43L43 5M43 5H15M43 5V33' stroke='%23befc00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+        }
+        .glass-card {
+            background: rgba(19, 19, 19, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(72, 72, 72, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .accordion-item {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            flex: 1;
+            min-width: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .accordion-item:hover {
+            flex: 3;
+        }
+        .accordion-image {
+            filter: grayscale(100%) brightness(0.6);
+            transition: all 0.6s ease;
+        }
+        .accordion-item:hover .accordion-image {
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.05);
+        }
+        .accordion-content {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            opacity: 0.6;
+        }
+        .accordion-item:hover .accordion-content {
+            opacity: 1;
+        }
+
+        .step-path {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: repeating-linear-gradient(to bottom, transparent, transparent 10px, rgba(190, 252, 0, 0.3) 10px, rgba(190, 252, 0, 0.3) 20px);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .step-path { left: 40px; transform: none; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .step-node {
+            transition: all 0.5s ease;
+        }
+        .step-node:hover {
+            box-shadow: 0 0 20px rgba(190, 252, 0, 0.4);
+            transform: scale(1.1) translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .step-node:hover { transform: scale(1.1); }
+        }
+
+        @keyframes highlight {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        .animate-highlight-lime::before {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            height: 35%;
+            background: #befc00;
+            z-index: -1;
+            opacity: 0.4;
+            animation: highlight 1.5s ease-out forwards;
+        }
+        .animate-highlight-blue::before {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            height: 35%;
+            background: #3b82f6;
+            z-index: -1;
+            opacity: 0.4;
+            animation: highlight 1.5s ease-out forwards;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            user-select: none;
+        }
+        .marquee-content {
+            display: flex;
+            gap: 2rem;
+            flex-shrink: 0;
+        }
+        .marquee-text {
+            font-family: 'Epilogue', sans-serif;
+            font-weight: 900;
+            font-size: 5rem;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            padding: 0.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .marquee-text { font-size: 3rem; }
+        }
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+        }
+        .animate-marquee-left {
+            animation: marquee-left 30s linear infinite;
+        }
+        .animate-marquee-right {
+            animation: marquee-right 30s linear infinite;
+        }
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .keyword-active {
+            color: #befc00 !important;
+            opacity: 1 !important;
+            transform: translateX(10px);
+        }
+        .image-transition {
+            transition: opacity 0.3s ease-in-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .perspective-midrange {
+            perspective: 1200px;
+        }
+        .transform-3d {
+            transform-style: preserve-3d;
+        }
+        @keyframes carousel-rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(-360deg); }
+        }
+        .animate-carousel {
+            animation: carousel-rotate 40s linear infinite;
+        }
+
+        .circle-progress {
+            stroke-dasharray: 552.92;
+            stroke-dashoffset: 0;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+        
+        .faq-item-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+        .faq-item-trigger:checked ~ .faq-item-content {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 1rem;
+        }
+        .faq-item-trigger:checked ~ label .faq-icon {
+            transform: rotate(45deg);
+            color: #befc00;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+    </style>
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto font-['Epilogue'] tracking-tight">
+<div class="text-xl font-bold tracking-tighter text-[#f9f9f9]">
+            Entrext Pro<span class="text-tertiary">.</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-[#f9f9f9]/60 hover:text-[#befc00] transition-colors duration-300" href="#process">The Way</a>
+<a class="text-[#f9f9f9]/60 hover:text-[#befc00] transition-colors duration-300" href="#products">Products</a>
+<a class="text-[#f9f9f9]/60 hover:text-[#befc00] transition-colors duration-300" href="#founders">Founders</a>
+<a class="text-[#f9f9f9]/60 hover:text-[#befc00] transition-colors duration-300" href="#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-[#f9f9f9] text-[#5f5f5f] px-6 py-2.5 rounded-md font-label font-semibold text-sm scale-95 active:scale-90 transition-transform">
+                Get Started
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 overflow-hidden">
+<!-- Hero Section -->
+<section class="relative max-w-7xl mx-auto px-8 py-20 lg:py-40">
+<div class="flex flex-col items-center text-center gap-12">
+<div class="">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-outline-variant/20 mb-8">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-[10px] uppercase tracking-widest font-label font-medium opacity-60">Human-Centric Tech</span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl font-black tracking-tight leading-[0.95] mb-8 bg-gradient-to-r from-white via-primary-dim to-white bg-[length:200%_auto] bg-clip-text text-transparent">
+                    The Bootstrapped<br class="hidden md:block"/>
+<span class="text-tertiary" style="text-shadow: rgba(190, 252, 0, 0.45) 0px 0px 20px;">First Studio.</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl mb-12 leading-relaxed mx-auto text-center">Elite Tech &amp; Growth teams building validated startups with full ownership and zero outside control.<span class="text-white/80 block mt-2">Pure partnership to build, pivot, and scale.</span></p>
+<div class="flex flex-col gap-4 sm:flex-row justify-center">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity">
+                        Launch Project
+                    </button>
+<button class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-lg font-bold text-lg hover:bg-surface-container-low transition-colors">
+                        View Case Studies
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Dual-Line Marquee Section -->
+<section class="py-12 bg-black border-y border-outline-variant/10">
+<div class="marquee-container mb-4">
+<div class="marquee-content animate-marquee-right">
+<span class="marquee-text">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-tertiary">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-tertiary">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+</div>
+</div>
+<div class="marquee-container">
+<div class="marquee-content animate-marquee-left">
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-tertiary">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-outline">BUILDING FOR THE NEXT DECADE</span>
+<span class="marquee-text text-tertiary">BUILDING FOR THE NEXT DECADE</span>
+</div>
+</div>
+</section>
+<!-- The Entrext Way -->
+<section class="py-32 bg-surface-container-lowest relative overflow-hidden" id="process">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="mb-32 text-center reveal active">
+<h2 class="font-headline text-5xl md:text-6xl font-black mb-6">The <span class="italic font-light">Entrext Way</span></h2>
+<p class="font-body text-xl text-tertiary font-medium">6 Steps to joining our elite core</p>
+</div>
+<div class="relative">
+<div class="step-path"></div>
+<div class="space-y-32">
+<div class="relative flex flex-col md:flex-row items-center gap-8 md:gap-0 reveal active">
+<div class="md:w-1/2 md:pr-16 text-center md:text-right order-2 md:order-1">
+<h3 class="font-headline text-3xl font-bold mb-4">Step 01: The Quality Gate</h3>
+<p class="text-on-surface-variant max-w-md ml-auto leading-relaxed">Filtering for the top 1% of talent. A rigorous entry point where only pure capability survives.</p>
+</div>
+<div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-highest border-2 border-tertiary flex items-center justify-center order-1 md:order-2 step-node">
+<span class="material-symbols-outlined text-tertiary">filter_list</span>
+</div>
+<div class="md:w-1/2 hidden md:block order-3"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center reveal active">
+<div class="md:w-1/2 hidden md:block"></div>
+<div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-highest border-2 border-tertiary flex items-center justify-center step-node">
+<span class="material-symbols-outlined text-tertiary">diversity_3</span>
+</div>
+<div class="md:w-1/2 md:pl-16 text-center md:text-left mt-8 md:mt-0">
+<h3 class="font-headline text-3xl font-bold mb-4">Step 02: Ecosystem Alignment</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">Culture Fit: We dive deep into your core values to ensure they resonate with the heart of our startup culture.</p>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center reveal active">
+<div class="md:w-1/2 md:pr-16 text-center md:text-right order-2 md:order-1">
+<h3 class="font-headline text-3xl font-bold mb-4">Step 03: Deep Dive</h3>
+<p class="text-on-surface-variant max-w-md ml-auto leading-relaxed">(Technical Round) – Beyond skills, we ensure your expertise is matched with the exact problem that needs your genius.</p>
+</div>
+<div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-highest border-2 border-tertiary flex items-center justify-center order-1 md:order-2 step-node">
+<span class="material-symbols-outlined text-tertiary">biotech</span>
+</div>
+<div class="md:w-1/2 hidden md:block order-3"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center reveal active">
+<div class="md:w-1/2 hidden md:block"></div>
+<div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-highest border-2 border-tertiary flex items-center justify-center step-node">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+</div>
+<div class="md:w-1/2 md:pl-16 text-center md:text-left mt-8 md:mt-0">
+<h3 class="font-headline text-3xl font-bold mb-4">Step 04: The Reality Check</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">Market Validation: You’ll be tested on your ability to align product ideas with real-world market demand and user pain points.</p>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center reveal active">
+<div class="md:w-1/2 md:pr-16 text-center md:text-right order-2 md:order-1">
+<h3 class="font-headline text-3xl font-bold mb-4">Step 05: Collaborative Sprint</h3>
+<p class="text-on-surface-variant max-w-md ml-auto leading-relaxed">(Task/Assignment) – An unannounced challenge designed to test how you translate strategy into high-impact action.</p>
+</div>
+<div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-highest border-2 border-tertiary flex items-center justify-center order-1 md:order-2 step-node">
+<span class="material-symbols-outlined text-tertiary">bolt</span>
+</div>
+<div class="md:w-1/2 hidden md:block order-3"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center reveal active">
+<div class="md:w-1/2 hidden md:block"></div>
+<div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-highest border-2 border-tertiary flex items-center justify-center step-node">
+<span class="material-symbols-outlined text-tertiary">local_fire_department</span>
+</div>
+<div class="md:w-1/2 md:pl-16 text-center md:text-left mt-8 md:mt-0">
+<h3 class="font-headline text-3xl font-bold mb-4">Step 06: The Grit Test</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">(Surprise 2) - The Final Stand: A test of pure relentlessness and resilience—proving you have the fire to see things through.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Core Products Section -->
+<section class="py-32 px-8" id="products">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-20 items-end mb-24">
+<h2 class="font-headline text-5xl md:text-7xl font-black leading-tight reveal active">Our Core <br/><span class="text-tertiary">Products</span></h2>
+<p class="text-xl text-on-surface-variant border-l-2 border-tertiary pl-8 reveal active">Bespoke tools built for the modern creator economy.</p>
+</div>
+<div class="flex h-[600px] w-full gap-4 items-stretch reveal active">
+<div class="accordion-item group border border-outline-variant/20 rounded-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Garv Thakral" class="accordion-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhvnOSanAgV1MLD3P0mJI1TorV3A20i3xCd62qExs7ZeIyDutx-nJVoJ5qQOX03OCna7gXlk8egTdO6wVZhnXpQdjUqMj3JYiGhwV2eReWd6Lkp3QBLJO45ghcs74Cm9d-bhyfphj1II7z3NOWwx7b5lMIWX_NHRwVvlp11KyhdNnr4gnKuXbdK8uhFhTXqfGsis6401u5HMxft33lZAAF48xlSqCm5hj55lC0bx8Yk7j3oL5B8IMxKH48Nq3Bh9lPRQp0QCdA9Hcc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="accordion-content absolute bottom-0 right-0 p-8 z-10 text-right w-full">
+<div class="mb-1 text-xs font-label uppercase tracking-widest opacity-60">Founder</div>
+<h4 class="font-headline text-2xl font-bold mb-1">Garv Thakral</h4>
+<div class="text-tertiary font-black text-4xl tracking-tighter">HERTH</div>
+</div>
+</div>
+<div class="accordion-item group border border-outline-variant/20 rounded-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Komal Siddharth" class="accordion-image w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida/ADBb0uhhEirC10SbVZ4nCZNhKGF3rOlF8uJxuzkd6GN84xWKa-RoklcdYyRVPKGei3JXNtpg_0abiRIVeZLtnbOAEhFDAAhYhcQkCwYKMKeRMzie6MF-poyH5at8yElELo9WwT5HZoANVOocKJvjhDdFkf5c-UPW5Qnanm9hVAD0p9bvN1d4hN7ALuYEJKsoxzVc_Gbc16-trV17wPfIQcvhVE5KX7PHWE2HMMkilOxjjfVmwmttlAv3GzxMxgWrDaSD2ExUv0_48M_6tI8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="accordion-content absolute bottom-0 right-0 p-8 z-10 text-right w-full">
+<div class="mb-1 text-xs font-label uppercase tracking-widest opacity-60">Founder</div>
+<h4 class="font-headline text-2xl font-bold mb-1">Komal Siddharth</h4>
+<div class="text-primary font-black text-4xl tracking-tighter">COMPANION</div>
+</div>
+</div>
+<div class="accordion-item group border border-outline-variant/20 rounded-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Manthan Gupta" class="accordion-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhUAGDp3cZ3tpSleqJ9rmeIs0qERKlbQrARUW2WaaputZJWEFmQFIf3mV1JbRPVIGMw-1KH8_DXNwMLA_VLCZsxNqU7F6Eo22BTNftgYCEUl_PqlX-XkNvfeTRnsx6eI1U0IqMRUEMjyK-ZR7_sNeLk32JhyZuPuBxXyi_O_ZCjt9jcVv_7256YeieJ6EYnYal-diC6fxkNU-VejRSMzW0OlOagpjQrPfvY5dj-rQTiE6ottsgOnFEoqG8EZ8sX0g-wgDCLhtQvA0M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="accordion-content absolute bottom-0 right-0 p-8 z-10 text-right w-full">
+<div class="mb-1 text-xs font-label uppercase tracking-widest opacity-60">Founder</div>
+<h4 class="font-headline text-2xl font-bold mb-1">Manthan Gupta</h4>
+<div class="text-primary font-black text-4xl tracking-tighter">KNOWX</div>
+</div>
+</div>
+<div class="accordion-item group border border-outline-variant/20 rounded-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Aryan Sagavekar" class="accordion-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uik1iJ0dtMTIssLLMce4caA1IBZzjBNge9Nm1JD6t_PkifJAMi9guKLoZlv7_GX3ylpNsrdbusdL6y2pMBs6_9fZ1cL2g-HZOxsf52SN9hUJrfc1azMjAwdtf1lrQoclhxRYeA4sf1FEUY-VrMxUcrlWIyVNxSg-u0vO7AufSSr_fNcFI9Rms2nMowkgHHuGnmce6-_QOuBhfv6waHj9XGDdrQV8ysSCO0PryVse7meD3PnoYwqTMY-cchVxRredIpcOTE119r1bg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="accordion-content absolute bottom-0 right-0 p-8 z-10 text-right w-full">
+<div class="mb-1 text-xs font-label uppercase tracking-widest opacity-60">Founder</div>
+<h4 class="font-headline text-2xl font-bold mb-1">Aryan Sagavekar</h4>
+<div class="text-primary font-black text-4xl tracking-tighter">FRIENDSIN</div>
+</div>
+</div>
+<div class="accordion-item group border border-outline-variant/20 rounded-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Taha Sadikot" class="accordion-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uiWKTWmIEGtgZZrXDo3OENuxULfCMEamUHQ3pppCFvA74TA6y-jRlx50i_XTSmmIGahk94ZT-ODqBw3IeRPuffJZErba4bej4UCfjStJTgXj9qMrRtSZIrGpvsRn33ODSkE9eHoQx-BbO69XMZMVu6D9ULX-UzViOI9b1OR5EltOJW3D0EiiIAKyG-wfrK-crk1UL06DCuQPDmcuqhbYM9ve-3YOpJjPFSJL9I4LoPkmgA3lYp9wKTo17Azcnbl7iOxzDDfUu775-0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="accordion-content absolute bottom-0 right-0 p-8 z-10 text-right w-full">
+<div class="mb-1 text-xs font-label uppercase tracking-widest opacity-60">Founder</div>
+<h4 class="font-headline text-2xl font-bold mb-1">Taha Sadikot</h4>
+<div class="text-tertiary font-black text-4xl tracking-tighter">NOA</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Mechanisms -->
+<section class="py-32 bg-surface-container-lowest" id="core-mechanisms">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-8 mb-8">
+<div class="glass-card p-12 rounded-3xl flex flex-col justify-center reveal active">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-xl">groups</span>
+</div>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Selection Rate</span>
+<span class="ml-auto text-white font-headline font-black">0.05%</span>
+</div>
+<h2 class="font-headline text-5xl lg:text-7xl font-black tracking-tight leading-tight">
+                        10,000 Founders Screened, <br/>
+<span class="text-tertiary">5 Passed</span>
+</h2>
+<p class="mt-8 text-on-surface-variant text-lg">Less than 1% Selection. We only build with the absolute best talent globally.</p>
+<div class="mt-12 flex -space-x-4 overflow-hidden">
+<img alt="Founder 1" class="inline-block h-12 w-12 rounded-full ring-2 ring-black object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhvnOSanAgV1MLD3P0mJI1TorV3A20i3xCd62qExs7ZeIyDutx-nJVoJ5qQOX03OCna7gXlk8egTdO6wVZhnXpQdjUqMj3JYiGhwV2eReWd6Lkp3QBLJO45ghcs74Cm9d-bhyfphj1II7z3NOWwx7b5lMIWX_NHRwVvlp11KyhdNnr4gnKuXbdK8uhFhTXqfGsis6401u5HMxft33lZAAF48xlSqCm5hj55lC0bx8Yk7j3oL5B8IMxKH48Nq3Bh9lPRQp0QCdA9Hcc"/>
+<img alt="Founder 2" class="inline-block h-12 w-12 rounded-full ring-2 ring-black object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhhEirC10SbVZ4nCZNhKGF3rOlF8uJxuzkd6GN84xWKa-RoklcdYyRVPKGei3JXNtpg_0abiRIVeZLtnbOAEhFDAAhYhcQkCwYKMKeRMzie6MF-poyH5at8yElELo9WwT5HZoANVOocKJvjhDdFkf5c-UPW5Qnanm9hVAD0p9bvN1d4hN7ALuYEJKsoxzVc_Gbc16-trV17wPfIQcvhVE5KX7PHWE2HMMkilOxjjfVmwmttlAv3GzxMxgWrDaSD2ExUv0_48M_6tI8"/>
+<img alt="Founder 3" class="inline-block h-12 w-12 rounded-full ring-2 ring-black object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhUAGDp3cZ3tpSleqJ9rmeIs0qERKlbQrARUW2WaaputZJWEFmQFIf3mV1JbRPVIGMw-1KH8_DXNwMLA_VLCZsxNqU7F6Eo22BTNftgYCEUl_PqlX-XkNvfeTRnsx6eI1U0IqMRUEMjyK-ZR7_sNeLk32JhyZuPuBxXyi_O_ZCjt9jcVv_7256YeieJ6EYnYal-diC6fxkNU-VejRSMzW0OlOagpjQrPfvY5dj-rQTiE6ottsgOnFEoqG8EZ8sX0g-wgDCLhtQvA0M"/>
+<div class="flex items-center justify-center h-12 w-12 rounded-full ring-2 ring-black bg-surface-container text-[10px] font-bold text-tertiary uppercase tracking-tighter">
+                            +12 joined
+                        </div>
+</div>
+</div>
+<div class="glass-card p-12 rounded-3xl reveal active">
+<div class="inline-block px-4 py-1 rounded-full border border-outline-variant/30 text-on-surface-variant font-label text-[10px] uppercase tracking-widest font-bold mb-10">Phase: Validation</div>
+<h2 class="font-headline text-5xl lg:text-7xl font-black mb-8">Validated <span class="text-outline">Ideas</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">Every idea inside Entrext - Pro has gone through the fire before you touch it. No brainstorming in the dark.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-2xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-4">verified</span>
+<h4 class="font-headline font-bold text-lg mb-2">Market Fit</h4>
+<p class="text-xs text-on-surface-variant">Verified via early adoption signals and waitlist velocity.</p>
+</div>
+<div class="bg-surface-container p-6 rounded-2xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-4">radar</span>
+<h4 class="font-headline font-bold text-lg mb-2">Real Demand</h4>
+<p class="text-xs text-on-surface-variant">Problem-solution validated through 500+ user interviews.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-12 gap-8">
+<div class="md:col-span-8 glass-card p-12 rounded-3xl relative overflow-hidden reveal active">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-emerald-500">Network Live</span>
+</div>
+<h2 class="font-headline text-5xl font-black mb-6">Global Reach<span class="text-tertiary">.</span></h2>
+<p class="text-on-surface-variant text-lg max-w-lg mb-12">Async-first collaboration across 150+ countries. We build where the talent is, not where the office is.</p>
+<div class="flex flex-wrap gap-3 mb-16">
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">India</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">USA</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">UK</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">Singapore</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">Germany</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">UAE</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">Japan</span>
+<span class="px-4 py-2 bg-black/40 border border-outline-variant/10 rounded-lg text-sm font-medium">+140 more</span>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label font-bold uppercase tracking-[0.2em] text-on-surface-variant/40">
+<span>Latency: 24ms</span>
+<span>Nodes: 1,240</span>
+<span>Uptime: 99.9%</span>
+</div>
+</div>
+<span class="absolute -right-20 -bottom-20 material-symbols-outlined text-[300px] text-tertiary opacity-[0.03]">public</span>
+</div>
+<div class="md:col-span-4 bg-white p-12 rounded-3xl flex flex-col items-center justify-center text-center reveal active">
+<div class="relative w-48 h-48 mb-12 flex items-center justify-center">
+<svg class="w-full h-full">
+<circle cx="96" cy="96" fill="transparent" r="88" stroke="#f1f1f1" stroke-width="8"></circle>
+<circle class="circle-progress" cx="96" cy="96" fill="transparent" r="88" stroke="#232323" stroke-dasharray="552.92" stroke-dashoffset="0" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<div class="px-2 py-0.5 bg-black text-white text-[8px] font-black rounded mb-1 uppercase tracking-tighter">Owned</div>
+<span class="text-black font-headline text-5xl font-black">100%</span>
+</div>
+</div>
+<h3 class="text-black font-headline text-4xl font-black mb-6">You-First</h3>
+<p class="text-gray-500 font-medium leading-relaxed">Full ownership of your vision. No compromises on equity or creative control.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Strength Section -->
+<section class="py-32 bg-surface overflow-hidden relative min-h-[716px] flex flex-col justify-center" id="founders">
+<div class="max-w-7xl mx-auto px-8 mb-16 relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl font-black text-center mb-4 reveal active">Core Strength of <span class="text-tertiary">Entrext</span></h2>
+<p class="text-center text-on-surface-variant max-w-2xl mx-auto font-body reveal active">16 visionary builders collaborating in real-time. Connected by purpose, driven by execution.</p>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 items-center gap-12 h-full reveal active">
+<div class="relative h-[400px] md:h-[500px] overflow-hidden rounded-2xl border border-outline-variant/20">
+<img alt="Founder Left" class="w-full h-full object-cover image-transition scale-100" id="swap-img-left" src="https://lh3.googleusercontent.com/aida/ADBb0uhUAGDp3cZ3tpSleqJ9rmeIs0qERKlbQrARUW2WaaputZJWEFmQFIf3mV1JbRPVIGMw-1KH8_DXNwMLA_VLCZsxNqU7F6Eo22BTNftgYCEUl_PqlX-XkNvfeTRnsx6eI1U0IqMRUEMjyK-ZR7_sNeLk32JhyZuPuBxXyi_O_ZCjt9jcVv_7256YeieJ6EYnYal-diC6fxkNU-VejRSMzW0OlOagpjQrPfvY5dj-rQTiE6ottsgOnFEoqG8EZ8sX0g-wgDCLhtQvA0M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="flex flex-col items-center justify-center space-y-6 md:space-y-8">
+<button class="keyword-btn group relative" data-index="0" onclick="swapContext(0)">
+<span class="keyword-text font-headline text-3xl md:text-5xl font-black transition-all duration-300 opacity-30 cursor-pointer keyword-active">Discipline</span>
+</button>
+<button class="keyword-btn group relative" data-index="1" onclick="swapContext(1)">
+<span class="keyword-text font-headline text-3xl md:text-5xl font-black transition-all duration-300 opacity-30 cursor-pointer">Consistency</span>
+</button>
+<button class="keyword-btn group relative" data-index="2" onclick="swapContext(2)">
+<span class="keyword-text font-headline text-3xl md:text-5xl font-black transition-all duration-300 opacity-30 cursor-pointer">Hardwork</span>
+</button>
+<button class="keyword-btn group relative" data-index="3" onclick="swapContext(3)">
+<span class="keyword-text font-headline text-3xl md:text-5xl font-black transition-all duration-300 opacity-30 cursor-pointer">Resilience</span>
+</button>
+<button class="keyword-btn group relative" data-index="4" onclick="swapContext(4)">
+<span class="keyword-text font-headline text-3xl md:text-5xl font-black transition-all duration-300 opacity-30 cursor-pointer">Vision</span>
+</button>
+</div>
+<div class="relative h-[400px] md:h-[500px] overflow-hidden rounded-2xl border border-outline-variant/20">
+<img alt="Founder Right" class="w-full h-full object-cover image-transition scale-100" id="swap-img-right" src="https://lh3.googleusercontent.com/aida/ADBb0uhvnOSanAgV1MLD3P0mJI1TorV3A20i3xCd62qExs7ZeIyDutx-nJVoJ5qQOX03OCna7gXlk8egTdO6wVZhnXpQdjUqMj3JYiGhwV2eReWd6Lkp3QBLJO45ghcs74Cm9d-bhyfphj1II7z3NOWwx7b5lMIWX_NHRwVvlp11KyhdNnr4gnKuXbdK8uhFhTXqfGsis6401u5HMxft33lZAAF48xlSqCm5hj55lC0bx8Yk7j3oL5B8IMxKH48Nq3Bh9lPRQp0QCdA9Hcc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Manifesto Section -->
+<section class="py-40 bg-surface-container-lowest" id="manifesto">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-24 items-start">
+<div class="reveal active">
+<div class="inline-block px-4 py-1.5 rounded-full border border-error/30 text-error font-label text-[10px] uppercase tracking-widest font-bold mb-10">Exclusive Access</div>
+<h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-8">
+                    Not for <br/>
+<span class="text-outline">Everyone.</span>
+</h2>
+<p class="font-body text-2xl text-on-surface-variant leading-relaxed max-w-lg">
+                    We are a selective tribe. We don't look for resumes; we look for the hunger that keeps you awake at 3 AM. If you seek comfort, you're in the wrong place.
+                </p>
+<div class="mt-12 doodle-arrow relative -rotate-[15deg] opacity-50"></div>
+</div>
+<div class="reveal border-l border-outline-variant/20 pl-12 lg:pl-20 py-4 active">
+<h3 class="font-headline text-4xl font-black mb-12 doodle-underline inline-block">The Entrext Manifesto</h3>
+<div class="space-y-8 font-body text-xl text-on-surface leading-relaxed italic">
+<p>"In a world obsessed with mindless scaling, we choose intentional depth. We believe the intersection of human intuition and algorithmic precision is where the next century is built."</p>
+<p>"We don't build features; we build leverage. We don't hire employees; we empower architects. Our mission is to curate the 1% who will define the human-centric tech revolution."</p>
+<p>"Excellence is not an act, but a relentless habit. We are the architects of the unseen, the builders of the bold."</p>
+</div>
+<div class="mt-16">
+<div class="h-px w-20 bg-tertiary mb-6"></div>
+<p class="font-headline text-2xl font-bold tracking-tight text-[#f9f9f9]">
+                        — Manthan Gupta, <span class="text-tertiary">Founder</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Ecosystem Orbit Section -->
+<section class="py-40 bg-surface overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-8 mb-20 text-center">
+<h2 class="text-3xl md:text-5xl font-headline font-black text-white">The Ecosystem Orbit</h2>
+<p class="text-on-surface-variant mt-4 text-white/60">16 autonomous products rotating in a concave synchronicity.</p>
+</div>
+<div class="relative w-full h-[500px] perspective-midrange flex items-center justify-center">
+<div class="transform-3d animate-carousel relative w-64 h-80 flex items-center justify-center">
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-indigo-900" style="transform: rotateY(0deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">diamond</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">NEXUS</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-teal-900" style="transform: rotateY(22.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">radar</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">AURA</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-purple-900" style="transform: rotateY(45deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">terminal</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">VOID</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-amber-900" style="transform: rotateY(67.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">bolt</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">PULSE</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-blue-900" style="transform: rotateY(90deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">all_inclusive</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">GLITCH</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-emerald-900" style="transform: rotateY(112.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">factory</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">FORGE</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-violet-900" style="transform: rotateY(135deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">polyline</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">VECTOR</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-orange-900" style="transform: rotateY(157.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">blur_on</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">PRISM</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-cyan-900" style="transform: rotateY(180deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">waves</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">ECHO</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-rose-900" style="transform: rotateY(202.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">settings_input_component</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">SYNTAX</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-green-900" style="transform: rotateY(225deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">animation</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">KINETIC</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-fuchsia-900" style="transform: rotateY(247.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">spa</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">OASIS</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-sky-900" style="transform: rotateY(270deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">air</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">FLUX</h4>
+</div>
+<div class="absolute w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center p-6 text-center transform-3d shadow-2xl bg-lime-900" style="transform: rotateY(292.5deg) translateZ(-650px) rotateY(180deg);">
+<span class="material-symbols-outlined text-white text-4xl mb-4">public</span>
+<h4 class="text-xl font-headline font-bold text-white uppercase">ORBIT</h4>
+</div>
+</div></div></section><section class="py-32 bg-black text-center relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center">
+<h2 class="font-headline text-5xl md:text-8xl font-black tracking-tighter leading-[1.1] mb-8 text-white">
+      You have the hunger.<br/>
+<span class="relative inline-block">
+<span class="relative z-10">We have the match.</span>
+<span class="absolute bottom-2 left-0 w-full h-[35%] bg-tertiary/40 -z-0"></span>
+</span>
+</h2>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant mb-12 max-w-2xl">
+      Apply in 5 minutes. Build for the next decade.
+    </p>
+<div class="relative group">
+<div class="absolute -inset-1 bg-tertiary blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<button class="relative bg-tertiary text-on-tertiary px-12 py-5 rounded-lg font-headline text-xl font-black uppercase tracking-tight hover:scale-105 active:scale-95 transition-all">
+        Apply to Build
+      </button>
+</div>
+<p class="mt-10 font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant font-bold">
+<span class="text-tertiary">•</span> Next cohort starts in 14 days
+    </p>
+</div>
+</section></main><footer class="bg-black text-white pt-24 pb-12 px-8 border-t border-white/10">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+<!-- Company Column -->
+<div class="lg:col-span-4">
+<div class="text-2xl font-black font-headline mb-8">
+                    Entrext Pro<span class="text-tertiary">.</span>
+</div>
+<p class="text-on-surface-variant font-body text-lg mb-8 max-w-sm">
+                    Curating the human element in technology.<br/>
+                    We build the systems that build the future.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-tertiary hover:text-on-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-tertiary hover:text-on-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-tertiary hover:text-on-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">language</span>
+</a>
+</div>
+</div>
+<!-- Explore Column -->
+<div class="lg:col-span-2">
+<h4 class="font-headline font-bold uppercase tracking-widest text-sm mb-8">Explore</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-tertiary transition-colors" href="#process">The Way</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#products">Products</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#founders">Founders</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Apply</a></li>
+</ul>
+</div>
+<!-- Legal Column -->
+<div class="lg:col-span-2">
+<h4 class="font-headline font-bold uppercase tracking-widest text-sm mb-8">Legal</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-tertiary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Equity Structure</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<!-- Stay in the loop Column -->
+<div class="lg:col-span-4">
+<h4 class="font-headline font-bold uppercase tracking-widest text-sm mb-8">Stay in the loop</h4>
+<div class="bg-surface-container border border-white/10 rounded p-1 flex mb-4">
+<input class="bg-transparent border-none focus:ring-0 flex-grow px-4 text-sm font-body" placeholder="your@email.com" type="email"/>
+<button class="bg-white text-black px-6 py-2 rounded text-sm font-bold hover:bg-tertiary transition-colors">
+                        Join
+                    </button>
+</div>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant/60 font-bold">
+                    No spam. Only high-impact updates.
+                </p>
+</div>
+</div>
+<!-- Bottom Line -->
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-on-surface-variant font-medium">
+                © 2024 Entrext Pro. All rights reserved.
+            </p>
+<p class="text-xs text-on-surface-variant font-medium">
+                Built with <span class="text-white font-bold">Relentlessness</span> in London / SF / Bangalore
+            </p>
+</div>
+</div>
+</footer></body></html>
