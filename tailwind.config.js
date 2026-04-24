@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "blue-accent": "#93C5FD",
         "outline-variant": "#484848",
         "error-dim": "#d73357",
         "primary-fixed-dim": "#dddddd",
@@ -67,9 +68,10 @@ export default {
         full: "0.75rem"
       },
       fontFamily: {
-        headline: ["Epilogue"],
-        body: ["Manrope"],
-        label: ["Inter"]
+        headline: ["Instrument Sans"],
+        body: ["Instrument Sans"],
+        label: ["Instrument Sans"],
+        serif: ["Instrument Serif"]
       }
     },
   },

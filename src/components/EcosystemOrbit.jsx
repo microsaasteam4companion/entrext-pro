@@ -22,6 +22,7 @@ const orbitItems = [
     { name: "Soho Space", image: sohospace },
     { name: "PickSpy", image: pickspy },
     { name: "Vouched", image: vouched },
+    { name: "Funvitation", image: funvitation },
     { name: "SoloPilot", image: solopilot },
     { name: "InviteFlow", image: inviteflow },
     { name: "SubSafe", image: subsafe },
@@ -29,70 +30,114 @@ const orbitItems = [
     { name: "AutoMailor", image: automailor },
     { name: "IntervAI", image: intervai },
     { name: "OpinVox", image: opinvox },
-    { name: "CtrlSense", image: ctrlsense },
-    { name: "Funvitation", image: funvitation }
+    { name: "CtrlSense", image: ctrlsense }
 ];
 
-const RADIUS = 480;
-const CARD_ANGLE = 360 / orbitItems.length;
+const duplicatedItems = [...orbitItems, ...orbitItems];
+const CARD_ANGLE = 360 / duplicatedItems.length;
 
 const EcosystemOrbit = () => {
     const [rotation, setRotation] = useState(0);
+    const [dimensions, setDimensions] = useState({ 
+        radius: 1400, 
+        perspective: '800px',
+        cardWidth: '280px',
+        cardHeight: '380px'
+    });
     const animRef = useRef(null);
+    const isHoveredRef = useRef(false);
 
     useEffect(() => {
-        let lastTime = performance.now();
+        const updateDimensions = () => {
+            if (window.innerWidth < 768) {
+                setDimensions({
+                    radius: 400,
+                    perspective: '600px',
+                    cardWidth: '180px',
+                    cardHeight: '260px'
+                });
+            } else {
+                setDimensions({
+                    radius: 1400,
+                    perspective: '800px',
+                    cardWidth: '280px',
+                    cardHeight: '380px'
+                });
+            }
+        };
 
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+        
+        let lastTime = performance.now();
         const animate = (now) => {
             const delta = now - lastTime;
             lastTime = now;
-            setRotation(prev => (prev - (delta * 0.018)) % 360);
+            if (!isHoveredRef.current) {
+                setRotation(prev => (prev - (delta * 0.008)) % 360);
+            }
             animRef.current = requestAnimationFrame(animate);
         };
 
         animRef.current = requestAnimationFrame(animate);
-        return () => cancelAnimationFrame(animRef.current);
+        return () => {
+            cancelAnimationFrame(animRef.current);
+            window.removeEventListener('resize', updateDimensions);
+        };
     }, []);
 
     return (
-        <section className="py-32 bg-surface overflow-hidden">
-            <div className="max-w-[1440px] mx-auto px-8 mb-16 text-center">
-                <h2 className="text-3xl md:text-5xl font-headline font-black text-white mb-4">The Ecosystem Orbit</h2>
-                <p className="text-on-surface-variant text-lg font-body">16 autonomous products rotating in a concave synchronicity.</p>
-                <div className="w-10 h-0.5 bg-tertiary mx-auto mt-4 rounded-full"></div>
+        <section className="py-20 md:py-32 bg-surface overflow-hidden relative">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-8 mb-12 md:mb-16 text-center relative z-20">
+                <h2 className="text-3xl md:text-5xl font-headline font-medium text-white mb-2 md:mb-4">The <span className="font-accent">Ecosystem</span> Orbit</h2>
+                <div className="w-8 md:w-10 h-0.5 bg-tertiary mx-auto mt-2 md:mt-4 rounded-full"></div>
             </div>
 
-            {/* 3D Concave (Inner) Carousel */}
-            <div className="relative w-full flex items-center justify-center" style={{ perspective: '1200px', height: '460px' }}>
+            {/* 3D Panoramic Curve */}
+            <div 
+                className="relative w-full flex items-center justify-center overflow-hidden" 
+                style={{ perspective: dimensions.perspective, height: window.innerWidth < 768 ? '400px' : '500px' }}
+                onMouseEnter={() => isHoveredRef.current = true}
+                onMouseLeave={() => isHoveredRef.current = false}
+            >
+                
+                {/* Edge fade gradients */}
+                <div className="absolute inset-y-0 left-0 w-[10%] md:w-[25%] bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute inset-y-0 right-0 w-[10%] md:w-[25%] bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none"></div>
+
                 <div 
                     className="relative"
                     style={{ 
-                        width: '220px', 
-                        height: '320px',
+                        width: dimensions.cardWidth, 
+                        height: dimensions.cardHeight,
                         transformStyle: 'preserve-3d',
-                        transform: `rotateY(${rotation}deg)`
+                        /* Pulling the container forward by RADIUS brings the back wall right to our screen depth */
+                        transform: `translateZ(${dimensions.radius}px) rotateY(${rotation}deg)`
                     }}
                 >
-                    {orbitItems.map((item, index) => {
+                    {duplicatedItems.map((item, index) => {
                         const angle = index * CARD_ANGLE;
                         
                         return (
                             <div
                                 key={index}
-                                className="absolute inset-0 rounded-xl overflow-hidden border border-white/10 shadow-2xl"
+                                className="absolute inset-0 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] group"
                                 style={{ 
-                                    transform: `rotateY(${angle}deg) translateZ(-${RADIUS}px) rotateY(180deg)`,
+                                    // Pushing cards away places them on the cylinder wall
+                                    transform: `rotateY(${angle}deg) translateZ(-${dimensions.radius}px)`,
                                     transformStyle: 'preserve-3d',
+                                    // This prevents the browser from rendering items that rotate too far around to the back (which is physically behind our camera now!)
+                                    backfaceVisibility: 'hidden',
                                 }}
                             >
                                 <img 
                                     src={item.image} 
                                     alt={item.name} 
-                                    className="w-full h-full object-cover object-top"
+                                    className="w-full h-full object-cover object-top filter brightness-75 group-hover:brightness-110 transition-all duration-500"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                                <div className="absolute bottom-4 left-0 right-0 text-center">
-                                    <h4 className="text-xs font-headline font-bold text-white uppercase tracking-wider drop-shadow-lg">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 md:opacity-90 md:group-hover:opacity-60 transition-opacity duration-500" />
+                                <div className="absolute bottom-4 md:bottom-6 left-0 right-0 text-center transform translate-y-1 md:translate-y-2 md:group-hover:-translate-y-2 transition-transform duration-500">
+                                    <h4 className="text-lg md:text-2xl font-headline font-black text-white uppercase tracking-tighter drop-shadow-2xl">
                                         {item.name}
                                     </h4>
                                 </div>

@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-surface-container-lowest min-h-screen text-on-surface selection:bg-tertiary selection:text-on-tertiary">
+    <div className="bg-surface-container-lowest min-h-screen text-on-surface selection:bg-tertiary selection:text-on-tertiary overflow-x-hidden">
       <Navbar onApply={() => setIsFormOpen(true)} />
       <main className="pt-32">
         <Hero onApply={() => setIsFormOpen(true)} />

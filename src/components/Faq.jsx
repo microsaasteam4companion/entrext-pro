@@ -54,7 +54,7 @@ const Faq = () => {
         <section className="py-32 bg-surface-container-lowest" id="faq">
             <div className="max-w-4xl mx-auto px-8">
                 <div className="mb-20 text-center reveal active">
-                    <h2 className="font-headline text-5xl md:text-7xl font-black mb-6">FAQ<span className="text-tertiary">'s</span></h2>
+                    <h2 className="font-headline text-5xl md:text-7xl font-black mb-6"><span className="font-accent">FAQ</span><span className="text-tertiary">'s</span></h2>
                     <p className="text-on-surface-variant text-xl">Everything you need to know about building with Entrext.</p>
                 </div>
                 
