@@ -1,0 +1,103 @@
+.flip-container {
+  display: flex;
+  height: 500px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.flip-container.grid, .flip-container.columns {
+  align-content: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0;
+  transition: box-shadow 0.3s;
+}
+
+.flip-container.grid .flip-card {
+  flex-basis: 50%;
+  border-radius: 16px;
+  margin: 4px;
+}
+
+.flip-container.columns .flip-card {
+  flex-basis: 25%;
+  border-radius: 12px;
+  margin: 2px;
+}
+
+.flip-for, .flip-gsap {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.flip-for {
+  padding: 2px 1.5rem;
+  font-weight: 300;
+  display: none;
+}
+
+.flip-gsap {
+  padding: 2px 0;
+  font-weight: 900;
+  display: none;
+  color: #4A749B;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.flip-container.final .flip-for, .flip-container.final .flip-gsap {
+  display: block;
+}
+
+/* Colors for the 4 cards based on the prompt */
+.card-companion { background: rgba(74, 116, 155, 0.4); }
+.card-noa { background: rgba(233, 30, 99, 0.4); }
+.card-herth { background: rgba(0, 188, 212, 0.4); }
+.card-friendsin { background: rgba(63, 81, 181, 0.4); }
+
+.flip-container.plain .flip-card {
+  background: transparent;
+  color: white;
+  padding: 0;
+  border: none;
+  font-size: 4rem;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .flip-container {
+    height: 400px;
+  }
+  .flip-card {
+    font-size: 1.2rem;
+  }
+  .flip-container.plain .flip-card {
+    font-size: 2rem;
+    margin: 0 4px;
+  }
+  .flip-for, .flip-gsap {
+    font-size: 1.5rem;
+  }
+  .flip-container.grid .flip-card {
+    flex-basis: 100%; /* stack on mobile for grid maybe? Actually flex-wrap: wrap will keep 50% if we set it, but 50% is fine for 4 cards */
+  }
+}

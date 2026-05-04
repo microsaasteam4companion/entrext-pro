@@ -1,0 +1,16 @@
+.iso-wrapper {
+  color: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.iso-src-txt, .iso-top-txt {
+  position: relative;
+  text-align: center;
+}
+
+.iso-top-txt {
+  user-select: none;
+  -webkit-user-select: none;
+}

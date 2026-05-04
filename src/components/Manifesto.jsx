@@ -2,7 +2,7 @@ import React from 'react';
 
 const Manifesto = () => {
     return (
-        <section className="py-40 bg-surface-container-lowest" id="manifesto">
+        <section className="pb-40 pt-10 bg-surface-container-lowest" id="manifesto">
             <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
                 <div className="reveal active">
                     <div className="inline-block px-4 py-1.5 rounded-full border border-error/30 text-error font-label text-[10px] uppercase tracking-widest font-bold mb-8 md:mb-10">Exclusive Access</div>

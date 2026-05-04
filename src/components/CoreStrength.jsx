@@ -40,45 +40,22 @@ const CoreStrength = () => {
     const displayItems = dynamicKeywords.length > 0 ? dynamicKeywords : [{ text: "Grit", left: null, right: null }];
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (!containerRef.current) return;
+        const interval = setInterval(() => {
+            setActiveIndex((current) => (current + 1) % displayItems.length);
+        }, 3000); // Change image every 3 seconds
 
-            const rect = containerRef.current.getBoundingClientRect();
-            const sectionHeight = containerRef.current.offsetHeight;
-            const scrollDistance = -rect.top;
-            
-            const totalScrollable = sectionHeight - window.innerHeight;
-            
-            if (scrollDistance >= 0 && scrollDistance <= totalScrollable) {
-                const progress = scrollDistance / totalScrollable;
-                const newIndex = Math.min(
-                    Math.floor(progress * displayItems.length),
-                    displayItems.length - 1
-                );
-                if (newIndex >= 0 && newIndex !== activeIndex) {
-                    setActiveIndex(newIndex);
-                }
-            } else if (scrollDistance < 0) {
-                setActiveIndex(0);
-            } else if (scrollDistance > totalScrollable) {
-                setActiveIndex(displayItems.length - 1);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [activeIndex, displayItems.length]);
+        return () => clearInterval(interval);
+    }, [displayItems.length]);
 
     return (
         <section 
             ref={containerRef} 
-            className="relative" 
-            style={{ height: `${Math.max(displayItems.length, 4) * 70}vh` }} 
+            className="relative py-20 bg-surface overflow-hidden" 
             id="founders"
         >
-            <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden bg-surface">
+            <div className="w-full flex flex-col justify-center">
                 <div 
-                    className="absolute inset-0 opacity-15 blur-[120px] transition-all duration-1000"
+                    className="absolute inset-0 opacity-15 blur-[120px]"
                     style={{ background: `radial-gradient(circle at 50% 50%, #4A749B 0%, transparent 60%)` }}
                 ></div>
 
@@ -156,13 +133,6 @@ const CoreStrength = () => {
                     </div>
                 </div>
 
-                <div className="absolute left-8 bottom-12 flex items-center gap-4 reveal active">
-                    <div className="flex flex-col gap-1 items-center">
-                        <span className="material-symbols-outlined text-tertiary text-sm animate-bounce">expand_more</span>
-                        <div className="w-px h-12 bg-gradient-to-b from-tertiary to-transparent"></div>
-                    </div>
-                    <span className="text-[10px] font-label uppercase tracking-widest text-on-surface-variant font-bold">Scroll to sync</span>
-                </div>
             </div>
         </section>
     );
