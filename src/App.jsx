@@ -11,7 +11,6 @@ import ProductsAccordion from './components/ProductsAccordion';
 import Mechanisms from './components/Mechanisms';
 import CoreStrength from './components/CoreStrength';
 import Manifesto from './components/Manifesto';
-import EcosystemOrbit from './components/EcosystemOrbit';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import ApplicationForm from './components/ApplicationForm';
@@ -61,7 +60,6 @@ function App() {
         <Mechanisms />
         <CoreStrength />
         <Manifesto />
-        <EcosystemOrbit />
         <Faq />
         <HungerAnimation onApply={() => setIsFormOpen(true)} />
       </main>
