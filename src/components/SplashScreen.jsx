@@ -75,17 +75,13 @@ const SplashScreen = ({ onComplete }) => {
                         canvasRef.current.height - 200
                     );
 
-                    // Draw "E" Symbol with embossed metallic styling
+                    // Draw "E" Symbol with designed metallic styling
                     ctx.save();
-                    ctx.font = 'bold 120px "Segoe UI", sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
                     
                     const centerX = canvasRef.current.width * 0.5 - 10;
                     const centerY = canvasRef.current.height * 0.5 - 100;
 
                     // Simulate rotation by scaling width based on frame
-                    // Assuming totalFrames (260) is roughly 2 rotations based on typical coin assets
                     const scaleX = Math.cos((currentFrame.current / totalFrames) * Math.PI * 4);
                     
                     // Only draw if the coin face is visible (scaleX > 0)
@@ -93,26 +89,48 @@ const SplashScreen = ({ onComplete }) => {
                         ctx.translate(centerX, centerY);
                         ctx.scale(scaleX, 1);
 
-                        // Emboss effect: Darker shadow for depth
-                        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-                        ctx.fillText('E', 3, 3);
+                        // 1. Draw a base disc to cover anything on the original coin
+                        ctx.beginPath();
+                        ctx.arc(0, 0, 180, 0, Math.PI * 2);
+                        const discGrad = ctx.createRadialGradient(0, 0, 50, 0, 0, 180);
+                        discGrad.addColorStop(0, '#1a1a1a');
+                        discGrad.addColorStop(0.8, '#0a0a0a');
+                        discGrad.addColorStop(1, '#000000');
+                        ctx.fillStyle = discGrad;
+                        ctx.fill();
+                        ctx.strokeStyle = 'rgba(74, 116, 155, 0.3)'; // Tertiary color border
+                        ctx.lineWidth = 4;
+                        ctx.stroke();
 
-                        // Light highlight for sharp edges
-                        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-                        ctx.fillText('E', -1, -1);
+                        // 2. Draw designed "E" Logo
+                        const drawE = (color, offset = 0) => {
+                            ctx.fillStyle = color;
+                            ctx.beginPath();
+                            // Top bar
+                            ctx.roundRect(-50 + offset, -70 + offset, 100, 20, 4);
+                            // Middle bar
+                            ctx.roundRect(-50 + offset, -10 + offset, 80, 20, 4);
+                            // Bottom bar
+                            ctx.roundRect(-50 + offset, 50 + offset, 100, 20, 4);
+                            // Vertical bar
+                            ctx.roundRect(-50 + offset, -70 + offset, 20, 140, 4);
+                            ctx.fill();
+                        };
 
-                        // Main face with metallic chrome gradient
-                        const grad = ctx.createLinearGradient(-50, -50, 50, 50);
+                        // Shadow for depth
+                        drawE('rgba(0, 0, 0, 0.5)', 4);
+                        
+                        // Metallic Chrome Gradient for the E
+                        const grad = ctx.createLinearGradient(-60, -60, 60, 60);
                         grad.addColorStop(0, '#ffffff');
-                        grad.addColorStop(0.2, '#a0a0a0');
+                        grad.addColorStop(0.3, '#4A749B'); // Tertiary blue
                         grad.addColorStop(0.5, '#f0f0f0');
-                        grad.addColorStop(0.8, '#a0a0a0');
+                        grad.addColorStop(0.7, '#4A749B');
                         grad.addColorStop(1, '#ffffff');
                         
-                        ctx.fillStyle = grad;
-                        ctx.shadowColor = 'rgba(255, 255, 255, 0.2)';
-                        ctx.shadowBlur = 15;
-                        ctx.fillText('E', 0, 0);
+                        ctx.shadowColor = 'rgba(74, 116, 155, 0.5)';
+                        ctx.shadowBlur = 20;
+                        drawE(grad);
                         ctx.shadowBlur = 0;
                     }
                     
