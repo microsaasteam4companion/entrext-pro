@@ -98,7 +98,7 @@ const CoreStrength = () => {
                                     className={`transition-all duration-500 transform text-center whitespace-nowrap ${
                                         activeIndex === index 
                                         ? 'text-tertiary scale-110 opacity-100' 
-                                        : 'text-white/10 scale-95 opacity-20'
+                                        : 'text-white scale-95 opacity-30'
                                     }`}
                                 >
                                     <span className="font-headline text-lg md:text-4xl font-black block">
