@@ -14,15 +14,11 @@ import Manifesto from './components/Manifesto';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import ApplicationForm from './components/ApplicationForm';
-import SplashScreen from './components/SplashScreen';
 
 function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    if (showSplash) return;
-
     const observerOptions = {
       threshold: 0.1
     };
@@ -41,11 +37,7 @@ function App() {
     return () => {
       reveals.forEach(el => observer.unobserve(el));
     };
-  }, [showSplash]);
-
-  if (showSplash) {
-    return <SplashScreen onComplete={() => setShowSplash(false)} />;
-  }
+  }, []);
 
   return (
     <div className="bg-surface-container-lowest min-h-screen text-on-surface selection:bg-tertiary selection:text-on-tertiary overflow-x-hidden animate-in fade-in duration-1000">
