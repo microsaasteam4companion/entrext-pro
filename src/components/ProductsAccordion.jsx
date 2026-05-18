@@ -2,18 +2,18 @@ import React from 'react';
 
 const products = [
     {
-        name: "FRIENDSIN",
-        founder: "Aryan Sagavekar",
+        name: "COMPANION",
+        founder: "Komal Siddharth",
         role: "Founder",
-        description: "FriendsIn is a high-octane social catalyst that reimagines human interaction through gamified experiences. It's designed to break the digital ice, transforming awkward silences into authentic connections using a high-stakes 'Truth or Dare' engine that adapts to the group's energy.",
-        features: ["Gamified Icebreakers", "Dynamic Social Engine", "Authentic Connectivity"],
+        description: "Companion is an oasis of anonymity in a world of digital overexposure. It provides a safe, identity-free space for deep human connection, allowing users to share thoughts and find empathy without the burden of social expectations or digital footprints.",
+        features: ["Total Anonymity", "Empathy-First Matching", "Zero-Trace Conversations"],
         linkedin: "https://linkedin.com/in/#",
-        date: "Updated May 2025",
-        bgColor: "bg-[#2563EB]", 
+        date: "Updated Jan 2026",
+        bgColor: "bg-[#EC4899]", 
         textColor: "text-white",
         badgeColor: "bg-white/10 border border-white/10 text-white",
-        accentColor: "text-[#0A0054]",
-        accentHex: "#0A0054"
+        accentColor: "text-[#0A0944]",
+        accentHex: "#0A0944"
     },
     {
         name: "NOA",
@@ -30,18 +30,18 @@ const products = [
         accentHex: "#022C22"
     },
     {
-        name: "COMPANION",
-        founder: "Komal Siddharth",
+        name: "FRIENDSIN",
+        founder: "Aryan Sagavekar",
         role: "Founder",
-        description: "Companion is an oasis of anonymity in a world of digital overexposure. It provides a safe, identity-free space for deep human connection, allowing users to share thoughts and find empathy without the burden of social expectations or digital footprints.",
-        features: ["Total Anonymity", "Empathy-First Matching", "Zero-Trace Conversations"],
+        description: "FriendsIn is a high-octane social catalyst that reimagines human interaction through gamified experiences. It's designed to break the digital ice, transforming awkward silences into authentic connections using a high-stakes 'Truth or Dare' engine that adapts to the group's energy.",
+        features: ["Gamified Icebreakers", "Dynamic Social Engine", "Authentic Connectivity"],
         linkedin: "https://linkedin.com/in/#",
-        date: "Updated Jan 2026",
-        bgColor: "bg-[#EC4899]", 
+        date: "Updated May 2025",
+        bgColor: "bg-[#2563EB]", 
         textColor: "text-white",
         badgeColor: "bg-white/10 border border-white/10 text-white",
-        accentColor: "text-[#0A0944]",
-        accentHex: "#0A0944"
+        accentColor: "text-[#0A0054]",
+        accentHex: "#0A0054"
     },
     {
         name: "KNOWX",
