@@ -349,7 +349,7 @@ const ProductsAccordion = () => {
                                             <div className="w-4 h-[1px] bg-current"></div>
                                             <div className="text-[9px] font-mono font-black uppercase tracking-[0.3em]">{product.role}</div>
                                         </div>
-                                        <h3 className="text-2xl md:text-3xl font-mono font-bold tracking-tight uppercase leading-none border-b-2 border-white pb-1 inline-block">
+                                        <h3 className="text-3xl md:text-5xl font-mono font-bold tracking-tight uppercase leading-none border-b-2 border-white pb-1 inline-block">
                                             {product.name}
                                         </h3>
                                     </div>
@@ -384,8 +384,8 @@ const ProductsAccordion = () => {
                             </div>
 
                             {/* Card Visual Middle */}
-                            <div className="relative w-full h-[280px] overflow-hidden flex-shrink-0 flex items-center justify-center px-12 relative z-10 mb-4">
-                                <div className="w-full h-full rounded-[2rem] overflow-hidden shadow-2xl relative transition-all duration-700 group-hover:scale-[1.03] group-hover:rotate-1">
+                            <div className="relative w-full h-[200px] overflow-hidden flex-shrink-0 flex items-center justify-center px-24 relative z-10 mb-4">
+                                <div className="w-full h-full rounded-[1.5rem] overflow-hidden shadow-2xl relative transition-all duration-700 group-hover:scale-[1.03] group-hover:rotate-1">
                                     {renderProductArt(product.name)}
                                 </div>
                             </div>
@@ -402,13 +402,13 @@ const ProductsAccordion = () => {
 
                             {/* Footer details: Visionary & Date */}
                             <div className="p-10 pt-6 mt-auto border-t border-white/10 flex justify-between items-end relative z-10">
-                                <div className="flex flex-col gap-0.5">
-                                    <div className="text-[8px] font-mono font-black uppercase tracking-[0.25em] text-white/40">Visionary</div>
-                                    <div className={`leading-none text-2xl font-accent italic font-bold ${product.accentColor}`}>
+                                <div className="flex flex-col gap-1">
+                                    <div className="text-[10px] md:text-xs font-mono font-black uppercase tracking-[0.25em] text-white/50">Visionary</div>
+                                    <div className={`leading-none text-4xl md:text-5xl font-accent italic font-bold ${product.accentColor}`}>
                                         {product.founder}
                                     </div>
                                 </div>
-                                <div className="text-[8px] font-mono opacity-50 uppercase tracking-[0.15em]">
+                                <div className="text-[10px] md:text-xs font-mono opacity-50 uppercase tracking-[0.15em]">
                                     {product.date}
                                 </div>
                             </div>
