@@ -7,7 +7,7 @@ import React, { useState, useEffect, useRef } from 'react';
  */
 
 // Vite-specific way to glob all matching images in a directory
-const imagesGlob = import.meta.glob('../assets/founders/*.{jpg,JPG,jpeg,png,PNG}', { eager: true });
+const imagesGlob = import.meta.glob('../assets/founders/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}', { eager: true });
 
 // Extract the URL paths from the imported modules
 const allImages = Object.values(imagesGlob).map(mod => mod.default);
@@ -23,17 +23,23 @@ const CoreStrength = () => {
     const containerRef = useRef(null);
 
     // Build the dynamic keywords list based on images found
+    // To satisfy specific pairings (e.g., Komal with Taha), you can manually reorder allImages
+    // or use the mapping below once you identify which image is who.
     const itemsPerKeyword = 2;
     const dynamicKeywords = [];
     
-    for (let i = 0; i < allImages.length; i += itemsPerKeyword) {
+    // FOR USER: If you want to manually pair images, you can reorder allImages array here:
+    // const sortedImages = [imgForKomal, imgForTaha, imgForManthan, imgForGarv, ...];
+    const sortedImages = [...allImages]; 
+
+    for (let i = 0; i < sortedImages.length; i += itemsPerKeyword) {
         const keywordIdx = Math.floor(i / itemsPerKeyword);
         const word = keywordPool[keywordIdx % keywordPool.length];
         
         dynamicKeywords.push({
             text: word,
-            left: allImages[i],
-            right: allImages[i + 1] || allImages[0] 
+            left: sortedImages[i],
+            right: sortedImages[i + 1] || sortedImages[0] 
         });
     }
 
@@ -59,73 +65,73 @@ const CoreStrength = () => {
                     style={{ background: `radial-gradient(circle at 50% 50%, #4A749B 0%, transparent 60%)` }}
                 ></div>
 
-                <div className="max-w-7xl mx-auto px-8 w-full relative z-10">
-                    <div className="mb-12 text-center reveal active">
-                        <h2 className="font-headline text-4xl md:text-5xl font-black mb-4">
+                <div className="max-w-[1920px] mx-auto px-4 md:px-12 w-full relative z-10">
+                    <div className="mb-16 text-center reveal active">
+                        <h2 className="font-headline text-5xl md:text-7xl font-black mb-6">
                             <span className="font-accent">Core Strength</span> of <span className="text-tertiary">Entrext</span>
                         </h2>
-                        <p className="text-on-surface-variant max-w-2xl mx-auto font-body opacity-70">
+                        <p className="text-on-surface-variant max-w-3xl mx-auto font-body text-lg opacity-80">
                             Builders connected by purpose, driven by execution.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-16 relative">
+                    <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1.5fr] items-center gap-4 md:gap-12 relative">
                         {/* Left Card */}
-                        <div className="relative h-[200px] md:h-[450px] overflow-hidden rounded-2xl border border-outline-variant/20 shadow-2xl bg-black/20 group">
+                        <div className="relative h-[400px] md:h-[750px] overflow-hidden rounded-3xl border border-outline-variant/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-black/40 group">
                             {displayItems.map((item, index) => (
                                 <img 
                                     key={index}
                                     src={item.left} 
                                     alt="Founder" 
-                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out scale-100 group-hover:scale-105 transition-transform duration-[2000ms] ${
                                         activeIndex === index ? 'opacity-100' : 'opacity-0'
                                     }`}
                                 />
                             ))}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                            <a href="#" className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 cursor-pointer pointer-events-auto" aria-label="LinkedIn Profile">
-                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 md:w-5 md:h-5 text-white/50 hover:text-[#0A66C2] transition-colors">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+                            <a href="#" className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 cursor-pointer pointer-events-auto" aria-label="LinkedIn Profile">
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-8 md:h-8 text-white/40 hover:text-[#0A66C2] transition-all hover:scale-110">
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                 </svg>
                             </a>
                         </div>
 
                         {/* Center Keywords */}
-                        <div className="flex flex-wrap md:flex-col items-center justify-center gap-x-6 gap-y-2 md:space-y-4 py-6 md:py-8 overflow-hidden">
+                        <div className="flex flex-wrap md:flex-col items-center justify-center gap-x-6 gap-y-4 md:space-y-4 py-10 md:py-12 overflow-hidden z-20">
                             {displayItems.map((item, index) => (
                                 <div 
                                     key={index} 
-                                    className={`transition-all duration-500 transform text-center whitespace-nowrap ${
+                                    className={`transition-all duration-700 transform text-center whitespace-nowrap ${
                                         activeIndex === index 
                                         ? 'text-tertiary scale-110 opacity-100' 
-                                        : 'text-white scale-95 opacity-30'
+                                        : 'text-white scale-90 opacity-10'
                                     }`}
                                 >
-                                    <span className="font-headline text-lg md:text-4xl font-black block">
+                                    <span className="font-headline text-lg md:text-3xl font-black block tracking-tight uppercase">
                                         {item.text}
                                     </span>
                                     {activeIndex === index && (
-                                        <div className="w-6 md:w-8 h-1 bg-tertiary mx-auto mt-1 md:mt-2 rounded-full animate-pulse"></div>
+                                        <div className="w-8 md:w-12 h-1 bg-tertiary mx-auto mt-2 md:mt-3 rounded-full animate-pulse shadow-[0_0_15px_rgba(var(--tertiary-rgb),0.5)]"></div>
                                     )}
                                 </div>
                             ))}
                         </div>
 
                         {/* Right Card */}
-                        <div className="relative h-[200px] md:h-[450px] overflow-hidden rounded-2xl border border-outline-variant/20 shadow-2xl bg-black/20 group">
+                        <div className="relative h-[400px] md:h-[750px] overflow-hidden rounded-3xl border border-outline-variant/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-black/40 group">
                             {displayItems.map((item, index) => (
                                 <img 
                                     key={index}
                                     src={item.right} 
                                     alt="Founder" 
-                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out scale-100 group-hover:scale-105 transition-transform duration-[2000ms] ${
                                         activeIndex === index ? 'opacity-100' : 'opacity-0'
                                     }`}
                                 />
                             ))}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                            <a href="#" className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 cursor-pointer pointer-events-auto" aria-label="LinkedIn Profile">
-                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 md:w-5 md:h-5 text-white/50 hover:text-[#0A66C2] transition-colors">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+                            <a href="#" className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 cursor-pointer pointer-events-auto" aria-label="LinkedIn Profile">
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-8 md:h-8 text-white/40 hover:text-[#0A66C2] transition-all hover:scale-110">
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                 </svg>
                             </a>

@@ -192,7 +192,7 @@ const SplashScreen = ({ onComplete }) => {
                     <header ref={headerRef}>
                         <canvas id="coin" width="600" height="600" ref={canvasRef}></canvas>
                         <h1 className="title" title="Entrext" ref={titleRef}>Entrext</h1>
-                        <h2 className="subtitle"><span>·</span>Labs<span>·</span></h2>
+                        <h2 className="subtitle"><span>·</span>Pro<span>·</span></h2>
                     </header>
                 </section>
 

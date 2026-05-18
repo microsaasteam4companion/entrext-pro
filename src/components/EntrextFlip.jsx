@@ -12,7 +12,7 @@ const EntrextFlip = () => {
     
     // Letters for ENTREXT
     const letters = ["E", "N", "T", "R", "E", "X", "T"];
-    const subtexts = ["PRO", "LABS", "EDGE"];
+    const subtexts = ["PRO"];
 
     useEffect(() => {
         if (!containerRef.current) return;
@@ -61,12 +61,8 @@ const EntrextFlip = () => {
                     <div key={i} className={`flip-letter ${letter}`}>{letter}</div>
                 ))}
                 
-                {/* The three sub-cards as tags */}
+                {/* The sub-card tag */}
                 <div className="flip-subtext">PRO</div>
-                <div className="flip-separator">|</div>
-                <div className="flip-subtext">LABS</div>
-                <div className="flip-separator">|</div>
-                <div className="flip-subtext">EDGE</div>
             </div>
         </section>
     );
