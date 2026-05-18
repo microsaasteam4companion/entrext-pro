@@ -23,11 +23,11 @@ const products = [
         features: ["Prompt Version Control", "Collaborative Repositories", "AI Workflow Optimization"],
         linkedin: "https://linkedin.com/in/#",
         date: "Launched Aug 2025",
-        bgColor: "bg-[#356DFC]", 
+        bgColor: "bg-[#059669]", 
         textColor: "text-white",
         badgeColor: "bg-white/10 border border-white/10 text-white",
-        accentColor: "text-[#0A0054]",
-        accentHex: "#0A0054"
+        accentColor: "text-[#022C22]",
+        accentHex: "#022C22"
     },
     {
         name: "COMPANION",
@@ -152,7 +152,7 @@ const renderProductArt = (name) => {
             );
         case 'NOA':
             return (
-                <svg viewBox="0 0 400 400" className="w-full h-full rounded-3xl shadow-2xl object-cover bg-[#356DFC]">
+                <svg viewBox="0 0 400 400" className="w-full h-full rounded-3xl shadow-2xl object-cover bg-[#059669]">
                     {/* Row 0 */}
                     <path d="M 0 0 A 100 100 0 0 1 100 100 L 0 100 Z" fill="#0A0054" />
                     <path d="M 100 100 A 100 100 0 0 1 200 0 L 100 0 Z" fill="#FFFFFF" />
@@ -327,11 +327,11 @@ const ProductsAccordion = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal active">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 reveal active">
                     {products.map((product, index) => (
                         <div 
                             key={index} 
-                            className={`group relative flex flex-col justify-between rounded-[2.5rem] overflow-hidden h-[640px] transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] ${product.bgColor} ${product.textColor}`}
+                            className={`group relative flex flex-col justify-between rounded-[3rem] overflow-hidden h-[740px] transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_30px_70px_rgba(0,0,0,0.45)] ${product.bgColor} ${product.textColor}`}
                         >
                             {/* Aesthetic Grid Background */}
                             <div className="absolute inset-0 opacity-[0.06] pointer-events-none" 
@@ -342,7 +342,7 @@ const ProductsAccordion = () => {
                             </div>
 
                             {/* Card Content Top */}
-                            <div className="p-8 pb-0 flex flex-col relative z-10">
+                            <div className="p-10 pb-0 flex flex-col relative z-10">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="flex flex-col">
                                         <div className="flex items-center gap-2 mb-1.5 opacity-60">
@@ -384,7 +384,7 @@ const ProductsAccordion = () => {
                             </div>
 
                             {/* Card Visual Middle */}
-                            <div className="relative w-full h-[220px] overflow-hidden flex-shrink-0 flex items-center justify-center px-8 relative z-10 mb-2">
+                            <div className="relative w-full h-[280px] overflow-hidden flex-shrink-0 flex items-center justify-center px-12 relative z-10 mb-4">
                                 <div className="w-full h-full rounded-[2rem] overflow-hidden shadow-2xl relative transition-all duration-700 group-hover:scale-[1.03] group-hover:rotate-1">
                                     {renderProductArt(product.name)}
                                 </div>
@@ -392,8 +392,8 @@ const ProductsAccordion = () => {
 
                             {/* Join Us CTA Action */}
                             {product.isCTA && (
-                                <div className="absolute inset-x-0 bottom-[100px] flex items-center justify-center z-20">
-                                    <button className="relative group/btn bg-white text-black px-8 py-3.5 rounded-xl font-mono font-bold uppercase tracking-[0.15em] text-[10px] shadow-lg transition-all hover:scale-105 active:scale-95 overflow-hidden">
+                                <div className="absolute inset-x-0 bottom-[140px] flex items-center justify-center z-20">
+                                    <button className="relative group/btn bg-white text-black px-10 py-4 rounded-xl font-mono font-bold uppercase tracking-[0.15em] text-xs shadow-lg transition-all hover:scale-105 active:scale-95 overflow-hidden">
                                         <span className="relative z-10 animate-pulse">Initialize Partnership →</span>
                                         <div className="absolute inset-0 bg-blue-100 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
                                     </button>
@@ -401,7 +401,7 @@ const ProductsAccordion = () => {
                             )}
 
                             {/* Footer details: Visionary & Date */}
-                            <div className="p-8 pt-4 mt-auto border-t border-white/10 flex justify-between items-end relative z-10">
+                            <div className="p-10 pt-6 mt-auto border-t border-white/10 flex justify-between items-end relative z-10">
                                 <div className="flex flex-col gap-0.5">
                                     <div className="text-[8px] font-mono font-black uppercase tracking-[0.25em] text-white/40">Visionary</div>
                                     <div className={`leading-none text-2xl font-accent italic font-bold ${product.accentColor}`}>
