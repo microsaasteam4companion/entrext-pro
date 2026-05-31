@@ -6,7 +6,6 @@ import Vision from './components/Vision';
 import EntrextFlip from './components/EntrextFlip';
 import Process from './components/Process';
 import HungerAnimation from './components/HungerAnimation';
-import ProductsAccordion from './components/ProductsAccordion';
 import Manifesto from './components/Manifesto';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
@@ -45,7 +44,6 @@ function App() {
         <Vision />
         <EntrextFlip />
         <Process />
-        <ProductsAccordion />
         <Manifesto />
         <Faq />
         <HungerAnimation onApply={() => setIsFormOpen(true)} />
