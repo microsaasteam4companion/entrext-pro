@@ -2,31 +2,31 @@ import React from 'react';
 
 const Hero = ({ onApply }) => {
     return (
-        <section className="relative w-full overflow-hidden py-24 lg:py-40 min-h-screen flex flex-col justify-center" id="hero">
+        <section className="relative w-full overflow-hidden py-20 md:py-24 lg:py-40 min-h-screen flex flex-col justify-center" id="hero">
             {/* Background elements */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#0a0a0a]"></div>
                 <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-tertiary/10 blur-[120px] rounded-full"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="reveal active">
-                    <h1 className="font-headline text-5xl md:text-8xl font-black tracking-tight leading-[1] md:leading-[0.95] mb-6 md:mb-8 text-white">
+                    <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] md:leading-[0.95] mb-5 md:mb-8 text-white">
                         The <span className="text-tertiary">Bootstrapped</span><br />
                         First Studio<span className="text-tertiary">.</span>
                     </h1>
-                    <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 md:mb-12 leading-relaxed">
+                    <p className="font-body text-base md:text-xl text-on-surface-variant max-w-xl mb-8 md:mb-12 leading-relaxed">
                         Elite Tech & Growth teams building validated startups with full ownership and zero outside control.
                         <span className="text-white/80 block mt-2">Pure partnership to build, pivot, and scale.</span>
                     </p>
-                    <div className="flex flex-col gap-4 sm:flex-row justify-start items-stretch sm:items-center">
+                    <div className="flex flex-row gap-3 sm:gap-4 justify-start items-center flex-wrap">
                         <button 
                             onClick={onApply}
-                            className="bg-tertiary text-on-tertiary px-10 py-5 rounded-lg font-headline text-lg md:text-xl font-black uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(74,116,155,0.3)]"
+                            className="bg-tertiary text-on-tertiary px-7 py-4 md:px-10 md:py-5 rounded-lg font-headline text-base md:text-xl font-black uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(74,116,155,0.3)]"
                         >
                             Apply Now
                         </button>
-                        <button className="border border-outline-variant/30 text-on-surface px-10 py-5 rounded-lg font-headline text-lg md:text-xl font-black uppercase tracking-tight hover:bg-surface-container-low transition-colors">
+                        <button className="border border-outline-variant/30 text-on-surface px-7 py-4 md:px-10 md:py-5 rounded-lg font-headline text-base md:text-xl font-black uppercase tracking-tight hover:bg-surface-container-low transition-colors">
                             Our Vision
                         </button>
                     </div>

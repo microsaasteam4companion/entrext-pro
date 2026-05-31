@@ -51,11 +51,11 @@ const Faq = () => {
     };
 
     return (
-        <section className="py-32 bg-surface-container-lowest" id="faq">
-            <div className="max-w-4xl mx-auto px-8">
-                <div className="mb-20 text-center reveal active">
-                    <h2 className="font-headline text-5xl md:text-7xl font-black mb-6"><span className="font-accent">FAQ</span><span className="text-tertiary">'s</span></h2>
-                    <p className="text-on-surface-variant text-xl">Everything you need to know about building with Entrext.</p>
+        <section className="py-20 md:py-32 bg-surface-container-lowest" id="faq">
+            <div className="max-w-4xl mx-auto px-5 md:px-8">
+                <div className="mb-12 md:mb-20 text-center reveal active">
+                    <h2 className="font-headline text-4xl sm:text-5xl md:text-7xl font-black mb-4 md:mb-6"><span className="font-accent">FAQ</span><span className="text-tertiary">'s</span></h2>
+                    <p className="text-on-surface-variant text-base md:text-xl">Everything you need to know about building with Entrext.</p>
                 </div>
                 
                 <div className="space-y-4">
@@ -68,9 +68,9 @@ const Faq = () => {
                             >
                                 <button 
                                     onClick={() => toggleFaq(index)}
-                                    className="w-full flex items-center justify-between p-8 text-left hover:bg-surface-container/30 transition-colors"
+                                    className="w-full flex items-center justify-between p-5 md:p-8 text-left hover:bg-surface-container/30 transition-colors"
                                 >
-                                    <span className={`font-headline text-xl md:text-2xl font-bold transition-colors ${isOpen ? 'text-tertiary' : 'text-on-surface'}`}>
+                                    <span className={`font-headline text-base md:text-xl lg:text-2xl font-bold transition-colors pr-4 ${isOpen ? 'text-tertiary' : 'text-on-surface'}`}>
                                         {item.question}
                                     </span>
                                     <span className={`material-symbols-outlined transition-transform duration-500 ${isOpen ? 'rotate-180 text-tertiary' : 'text-on-surface-variant'}`}>
@@ -81,7 +81,7 @@ const Faq = () => {
                                 <div 
                                     className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
                                 >
-                                    <div className="px-8 pb-8 pt-0 text-on-surface-variant text-lg leading-relaxed">
+                                    <div className="px-5 md:px-8 pb-6 md:pb-8 pt-0 text-on-surface-variant text-base md:text-lg leading-relaxed">
                                         <div className="h-px w-10 bg-tertiary/30 mb-6"></div>
                                         {item.answer}
                                     </div>

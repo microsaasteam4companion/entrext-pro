@@ -116,7 +116,7 @@ const Process = () => {
 
             <div className="process-wrap" ref={wrapRef}>
                 <div className="flex flex-col items-center text-center mb-24 max-w-5xl mx-auto px-4">
-                    <h2 className="font-headline text-5xl md:text-7xl font-black leading-tight reveal active text-white mb-8 whitespace-nowrap">
+                    <h2 className="font-headline text-4xl sm:text-5xl md:text-7xl font-black leading-tight reveal active text-white mb-8">
                         The <span className="font-accent text-tertiary">Entrext Way</span>
                     </h2>
                     <p className="text-xl text-on-surface-variant reveal active">

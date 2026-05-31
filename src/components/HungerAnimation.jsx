@@ -64,14 +64,14 @@ const HungerAnimation = ({ onApply }) => {
         <section ref={sectionRef} className="hunger-animation-section relative bg-black py-20 overflow-hidden">
             {/* Blue ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#4A749B]/10 blur-[150px] rounded-full pointer-events-none"></div>
-            <div className="max-w-7xl mx-auto px-6 relative z-20 text-center mb-12">
-                <h2 className="font-headline text-5xl md:text-7xl font-black leading-tight mb-4 text-white">
+            <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-20 text-center mb-12">
+                <h2 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 text-white">
                     You have the <span className="font-accent text-tertiary italic">hunger.</span><br/>
                     <span className="text-white">We have the <span className="font-accent text-tertiary italic">match.</span></span>
                 </h2>
                 <button 
                     onClick={onApply}
-                    className="mt-10 bg-tertiary text-white px-12 py-5 rounded-2xl font-headline text-xl font-black uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(74,116,155,0.5)]"
+                    className="mt-8 md:mt-10 bg-tertiary text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-headline text-base md:text-xl font-black uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(74,116,155,0.5)]"
                 >
                     Apply Now
                 </button>

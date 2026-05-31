@@ -6,10 +6,7 @@ import Vision from './components/Vision';
 import EntrextFlip from './components/EntrextFlip';
 import Process from './components/Process';
 import HungerAnimation from './components/HungerAnimation';
-
 import ProductsAccordion from './components/ProductsAccordion';
-import Mechanisms from './components/Mechanisms';
-import CoreStrength from './components/CoreStrength';
 import Manifesto from './components/Manifesto';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
@@ -42,15 +39,13 @@ function App() {
   return (
     <div className="bg-surface-container-lowest min-h-screen text-on-surface selection:bg-tertiary selection:text-on-tertiary overflow-x-hidden animate-in fade-in duration-1000">
       <Navbar onApply={() => setIsFormOpen(true)} />
-      <main className="pt-32">
+      <main className="pt-20">
         <Hero onApply={() => setIsFormOpen(true)} />
         <Marquee />
         <Vision />
         <EntrextFlip />
         <Process />
         <ProductsAccordion />
-        <Mechanisms />
-        <CoreStrength />
         <Manifesto />
         <Faq />
         <HungerAnimation onApply={() => setIsFormOpen(true)} />

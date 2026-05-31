@@ -313,16 +313,16 @@ const renderProductArt = (name) => {
 
 const ProductsAccordion = () => {
     return (
-        <section className="py-32 px-6 md:px-12 bg-black overflow-hidden" id="products">
+        <section className="py-16 md:py-32 px-4 md:px-8 lg:px-12 bg-black overflow-hidden" id="products">
             <div className="max-w-6xl mx-auto">
                 <div className="flex flex-col items-center text-center mb-24 reveal active">
                     <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-white/10 bg-white/5 text-[10px] font-black uppercase tracking-[0.4em] text-tertiary/80">
                         Ecosystem
                     </div>
-                    <h2 className="font-headline text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+                    <h2 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter">
                         Core <span className="font-accent text-tertiary">Products</span>
                     </h2>
-                    <p className="text-xl text-slate-400 max-w-3xl leading-relaxed font-light">
+                    <p className="text-base md:text-xl text-slate-400 max-w-3xl leading-relaxed font-light">
                         A curated portfolio of high-performance ventures designed to redefine market boundaries.
                     </p>
                 </div>
@@ -331,7 +331,7 @@ const ProductsAccordion = () => {
                     {products.map((product, index) => (
                         <div 
                             key={index} 
-                            className={`group relative flex flex-col justify-between rounded-[3rem] overflow-hidden h-[740px] transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_30px_70px_rgba(0,0,0,0.45)] ${product.bgColor} ${product.textColor}`}
+                            className={`group relative flex flex-col justify-between rounded-[2rem] md:rounded-[3rem] overflow-hidden min-h-[600px] md:h-[740px] transition-all duration-700 hover:scale-[1.01] hover:shadow-[0_30px_70px_rgba(0,0,0,0.45)] ${product.bgColor} ${product.textColor}`}
                         >
                             {/* Aesthetic Grid Background */}
                             <div className="absolute inset-0 opacity-[0.06] pointer-events-none" 
@@ -342,14 +342,14 @@ const ProductsAccordion = () => {
                             </div>
 
                             {/* Card Content Top */}
-                            <div className="p-10 pb-0 flex flex-col relative z-10">
+                            <div className="p-6 md:p-10 pb-0 flex flex-col relative z-10">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="flex flex-col">
                                         <div className="flex items-center gap-2 mb-1.5 opacity-60">
                                             <div className="w-4 h-[1px] bg-current"></div>
                                             <div className="text-[9px] font-mono font-black uppercase tracking-[0.3em]">{product.role}</div>
                                         </div>
-                                        <h3 className="text-3xl md:text-5xl font-mono font-bold tracking-tight uppercase leading-none border-b-2 border-white pb-1 inline-block">
+                                        <h3 className="text-2xl sm:text-3xl md:text-5xl font-mono font-bold tracking-tight uppercase leading-none border-b-2 border-white pb-1 inline-block">
                                             {product.name}
                                         </h3>
                                     </div>
@@ -384,7 +384,7 @@ const ProductsAccordion = () => {
                             </div>
 
                             {/* Card Visual Middle */}
-                            <div className="relative w-full h-[200px] overflow-hidden flex-shrink-0 flex items-center justify-center px-24 relative z-10 mb-4">
+                            <div className="relative w-full h-[160px] md:h-[200px] overflow-hidden flex-shrink-0 flex items-center justify-center px-12 md:px-24 relative z-10 mb-4">
                                 <div className="w-full h-full rounded-[1.5rem] overflow-hidden shadow-2xl relative transition-all duration-700 group-hover:scale-[1.03] group-hover:rotate-1">
                                     {renderProductArt(product.name)}
                                 </div>
@@ -401,10 +401,10 @@ const ProductsAccordion = () => {
                             )}
 
                             {/* Footer details: Visionary & Date */}
-                            <div className="p-10 pt-6 mt-auto border-t border-white/10 flex justify-between items-end relative z-10">
+                            <div className="p-6 md:p-10 pt-4 md:pt-6 mt-auto border-t border-white/10 flex justify-between items-end relative z-10">
                                 <div className="flex flex-col gap-1">
                                     <div className="text-[10px] md:text-xs font-mono font-black uppercase tracking-[0.25em] text-white/50">Visionary</div>
-                                    <div className={`leading-none text-4xl md:text-5xl font-accent italic font-bold ${product.accentColor}`}>
+                                    <div className={`leading-none text-3xl md:text-5xl font-accent italic font-bold ${product.accentColor}`}>
                                         {product.founder}
                                     </div>
                                 </div>
